@@ -1,48 +1,29 @@
 function convertToRoman(num) {
-  	const obj = {
-      0:['M',1000], 
-      1:['D', 500], 
-      2:['C', 100], 
-      3:['L', 50], 
-      4:['X', 10], 
-      5:['V', 5], 
-      6:['I', 1]
+    const obj = {
+        0:['M',1000], 
+        1:['CM',900],
+        2:['D', 500], 
+        3:['CD',400],
+        4:['C', 100], 
+        5:['XC',90],
+        6:['L', 50], 
+        7:['XL',40],
+        8:['X', 10], 
+        9:['IX',9],
+        10:['V', 5], 
+        11:['IV',4],
+        12:['I', 1]
     };
-let result='';
-  //your code here
-while(num>0){   
-if(num>=1000){
-   num=num-1000;
-	result+='M';
-}else if(num>=500 && num<999){
-    num=num-500;
-	result +='D'
-}else if(num>=100 && num<500){
-   num=num-100;
-	result +='C'
-}else if(num>=50 && num<100){
-    num=num-50;
-	result +='L'
-}else if(num>=10 && num<50){
-    num=num-10;
-	result +='X'
-}else if(num>=5 && num<10){
-    num=num-5;
-	result +='V'
-}else if(num>=1 && num<5){
-    num=num-1;
-	result +='I'
+    let result = '';
+    // Iterate over the object in descending order
+    for (let i = 0; i < Object.keys(obj).length; i++) {
+        // While the number is greater than or equal to the value
+        while (num >= obj[i][1]) {
+            // Subtract the value from the number
+            num -= obj[i][1];
+            // Add the symbol to the result
+            result += obj[i][0];
+        }
+    }
+    return result;
 }
-
-}
-	return result;
-}
-// You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
-
-console.log(convertToRoman(36));
-
-
-
-
-// do not edit below this line
-module.exports = convertToRoman
