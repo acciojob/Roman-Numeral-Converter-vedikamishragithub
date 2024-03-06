@@ -10,29 +10,32 @@ function convertToRoman(num) {
     };
 let result='';
   //your code here
-if(num>1000){
-   num-1000;
+while(num>0){   
+if(num>=1000){
+   num=num-1000;
 	result+='M';
-}else if(num>500 && num<999){
-    num-500;
+}else if(num>=500 && num<999){
+    num=num-500;
 	result +='D'
-}else if(num>100 && num<500){
-    num-100;
+}else if(num>=100 && num<500){
+   num=num-100;
 	result +='C'
-}else if(num>50 && num<100){
-    num-50;
+}else if(num>=50 && num<100){
+    num=num-50;
 	result +='L'
-}else if(num>10 && num<50){
-    num-10;
+}else if(num>=10 && num<50){
+    num=num-10;
 	result +='X'
-}else if(num>5 && num<10){
-    num-5;
+}else if(num>=5 && num<10){
+    num=num-5;
 	result +='V'
-}else if(num>1 && num<5){
-    num-1;
+}else if(num>=1 && num<5){
+    num=num-1;
 	result +='I'
 }
-return result;
+
+}
+	return result;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
