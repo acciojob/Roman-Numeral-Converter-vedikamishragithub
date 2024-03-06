@@ -27,3 +27,4 @@ function convertToRoman(num) {
     }
     return result;
 }
+module.exports = convertToRoman
